@@ -1,2 +1,7 @@
 # Bashmark
-A bookmark managers implemented in dmenu
+A bookmark manager implemented in dmenu
+
+## Dependencies:
+* `dmenu`
+* `xclip`
+* `xfce4-notifyd`
