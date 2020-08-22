@@ -36,8 +36,10 @@ function add()
 function get()
 {
 	trg=$(cat "$HOME/.bashmark" | awk '{print $1}' | sort | dmenu -i -p "Bashmark")
-	grep -w "$trg" "$HOME/.bashmark" | awk '{print $2}' | xclip -selection clipboard
-	notify-send "💻 $trg copied to the clipboard." "Click to dismiss."
+	if [ $trg != "" ]; then
+		grep -w "$trg" "$HOME/.bashmark" | awk '{print $2}' | xclip -selection clipboard
+		notify-send "💻 $trg copied to the clipboard." "Click to dismiss."
+	fi
 }
 
 if [ ! -f "$HOME/.bashmark" ]
